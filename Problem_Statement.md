@@ -1,69 +1,65 @@
 # Problem Statement
 
 ## 1. Title
-Supplier Performance Rating System
+Supplier Performance Rating and Management System
 
 ## 2. Domain
-Supply Chain / Procurement Management
+Procurement / Supply Chain Management
 
-## 3. Who is the user? (2-3 user types, with roles)
-- **Procurement Manager** — onboards suppliers, creates purchase orders, logs
-  deliveries and quality issues, reviews supplier scorecards, triggers score
-  recalculation.
-- **Supplier** — views their own performance dashboard, sees flagged issues
-  and the reasons behind their current rating.
+## 3. Who is the user?
+1. Admin/Procurement Manager – manages suppliers, products, purchase orders, deliveries, ratings and reports.
+2. Supplier – views assigned purchase orders, delivery status, performance scores and feedback.
 
-## 4. What problem are we solving? (3-5 sentences, real-life example)
-Procurement teams at small and mid-sized manufacturing or trading businesses
-track supplier reliability using scattered spreadsheets or plain gut feeling.
-There is no simple, standalone tool to score suppliers objectively on
-on-time delivery, quality, and pricing consistency. For example, a
-manufacturer working with 40 active suppliers has no early warning when a
-supplier's on-time delivery rate quietly drops from 95% to 60% over three
-months — the problem only surfaces after a production delay has already
-happened. This system gives procurement teams a live, weighted scorecard per
-supplier and flags underperformers before they cause real damage.
+## 4. What problem are we solving?
+Organizations often evaluate suppliers using scattered records and manual calculations. This makes it difficult to compare supplier quality, delivery performance, cost and compliance consistently. The proposed system centralizes supplier information and automatically calculates performance scores using configurable weighted criteria.
 
-## 5. Proposed Solution (what the application will do, feature-wise)
-- Supplier onboarding and profile management
-- Purchase order creation and tracking
-- Delivery logging (on-time vs. late, quantity received vs. ordered)
-- Quality issue logging with severity levels (Low / Medium / High)
-- Automated weighted scoring engine (on-time %, quality, price variance)
-- Tier classification (A / B / C) per supplier, recalculated periodically
-- Supplier-facing dashboard to view their own scorecard and issue history
-- Email/SMS alert to a supplier when their tier drops
-- Manager dashboard with sortable/filterable supplier rankings
+## 5. Proposed Solution
+The application will provide:
+- Secure login with role-based access.
+- Supplier and product management.
+- Purchase order and order-item management.
+- Delivery tracking.
+- Supplier performance rating.
+- Weighted overall score calculation.
+- Supplier ranking and performance categories.
+- Feedback and performance history.
 
-## 6. Core Entities / Database Tables (list all, minimum 5)
-1. **User** — login credentials, role (MANAGER / SUPPLIER), linked supplier (if applicable)
-2. **Supplier** — company profile, category, contact info, onboarding date
-3. **PurchaseOrder** — order raised against a supplier, expected delivery date, value
-4. **Delivery** — actual delivery logged against a purchase order
-5. **QualityIssue** — defect/issue logged against a purchase order
-6. **RatingScore** — computed periodic score and tier per supplier
+## 6. Core Entities / Database Tables
+1. users
+2. suppliers
+3. products
+4. purchase_orders
+5. order_items
+6. deliveries
+7. supplier_ratings
+8. feedback
 
-## 7. User Roles & Permissions (minimum 2 distinct roles, e.g. Admin & User)
-- **Procurement Manager**: full CRUD on Supplier, PurchaseOrder, Delivery,
-  and QualityIssue; can trigger score recalculation; can view every
-  supplier's scorecard.
-- **Supplier**: read-only access limited to their own PurchaseOrder,
-  Delivery, QualityIssue, and RatingScore records — cannot view or modify
-  other suppliers' data.
+## 7. User Roles & Permissions
+### Admin / Procurement Manager
+- Manage suppliers and products.
+- Create and manage purchase orders.
+- Record deliveries.
+- Create supplier ratings.
+- View rankings and reports.
+- Manage feedback.
 
-## 8. Success Criteria (e.g. 'a user should be able to book an appointment in under 1 minute')
-- A manager should be able to log a new delivery and see the supplier's
-  updated score reflect that change within seconds.
-- A supplier should be able to view their current tier and understand the
-  reason for it (e.g., "2 late deliveries this quarter") in under 1 minute
-  of logging in.
+### Supplier
+- View own profile.
+- View purchase orders and delivery information.
+- View own ratings and feedback.
 
-## 9. Out of Scope (clearly list what you will NOT build, to avoid over-commitment)
-- Payment processing / invoicing
-- Multi-currency support
-- Contract management or e-signatures
-- Native mobile apps (web-responsive only)
-- Multi-tenant support for more than one buying organization
+## 8. Success Criteria
+- Authorized users can log in securely.
+- Admin can manage all core procurement records.
+- Supplier performance can be calculated automatically.
+- A supplier can receive a score from 0–100 and a rating category.
+- Supplier rankings can be viewed using performance scores.
 
-## 10. Chosen Track:
- Java (Spring Boot) / Python (Django or FastAPI)
+## 9. Out of Scope
+- Real payment processing.
+- Real-time logistics/GPS tracking.
+- Automatic purchase-order creation using external ERP systems.
+- Production-grade predictive AI in the Day 2–10 MVP.
+
+## 10. Chosen Track
+Java (Spring Boot)
