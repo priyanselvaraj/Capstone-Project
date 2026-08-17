@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SPRS - Register</title><link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+<div class="login-card">
+  <div class="brand"><span>SP</span><div><h1>Supplier Performance</h1><p>Rating System</p></div></div>
+  <div class="auth-tabs">
+    <a class="auth-tab" href="index.html">Login</a>
+    <a class="auth-tab active" href="register.html">Register</a>
+  </div>
+  <form id="registerForm">
+    <label for="regName">Full Name</label>
+    <input id="regName" required autocomplete="name" placeholder="Enter full name">
+
+    <label for="regUsername">Username</label>
+    <input id="regUsername" required minlength="3" autocomplete="username" placeholder="Choose a username">
+
+    <label for="regEmail">Email</label>
+    <input id="regEmail" type="email" required autocomplete="email" placeholder="Enter email">
+
+    <label for="regPhone">Phone Number</label>
+    <input id="regPhone" type="tel" required pattern="[0-9+() -]{7,20}" autocomplete="tel" placeholder="Enter phone number">
+
+    <label for="regPassword">Password</label>
+    <input id="regPassword" type="password" required minlength="6" autocomplete="new-password" placeholder="8+ chars, uppercase, number & symbol">
+
+    <label for="regConfirmPassword">Confirm Password</label>
+    <input id="regConfirmPassword" type="password" required minlength="6" autocomplete="new-password" placeholder="Re-enter password">
+
+    <button class="btn primary" type="submit">Create Account</button>
+  </form>
+  <p class="demo">Password: 8+ characters, 1 uppercase, 1 number, 1 symbol</p>
+  <p class="auth-switch">Already registered? <a href="index.html">Login here</a></p>
+</div>
+<script src="script.js"></script>
+</body></html>

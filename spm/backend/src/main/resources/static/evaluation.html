@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SPRS - Evaluation</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="app"><aside class="sidebar"><div class="side-brand">SPRS</div><nav><a href="dashboard.html">📊 Dashboard</a><a href="suppliers.html">🏢 Suppliers</a><a class="active" href="evaluation.html">⭐ Evaluation</a><a href="reports.html">📈 Reports</a></nav><button class="logout" onclick="logout()">↪ Logout</button></aside>
+<main class="main"><header><div><h2>Supplier Evaluation</h2><p>Rate supplier performance</p></div></header>
+<section class="panel form-panel"><form id="evaluationForm"><label>Supplier</label><select id="evalSupplier" required></select>
+<div class="rating-grid"><div><label>Quality (25%)</label><input id="quality" type="number" min="0" max="100" value="80"></div><div><label>Delivery (25%)</label><input id="delivery" type="number" min="0" max="100" value="80"></div><div><label>Cost (20%)</label><input id="cost" type="number" min="0" max="100" value="80"></div><div><label>Service (15%)</label><input id="service" type="number" min="0" max="100" value="80"></div><div><label>Compliance (15%)</label><input id="compliance" type="number" min="0" max="100" value="80"></div></div>
+<div class="score-preview">Overall Score: <strong id="scorePreview">80%</strong> <span id="gradePreview">Good</span></div>
+<button class="btn primary">Submit Evaluation</button></form></section></main></div><script src="script.js"></script></body></html>

@@ -1,0 +1,23 @@
+# Day 2–10 Completion Checklist
+
+- [x] Problem statement
+- [x] Tech stack and architecture
+- [x] ER design with 8 tables
+- [x] Database schema and sample data
+- [x] JPA entity classes
+- [x] Repository interfaces
+- [x] Supplier CRUD
+- [x] Product CRUD
+- [x] Purchase order management
+- [x] Delivery management
+- [x] User registration/login with BCrypt password hashing
+- [x] Supplier rating calculation
+- [x] Supplier rating history
+- [x] Supplier ranking
+- [x] Feedback management
+- [x] Centralized exception handling
+- [x] Consistent API response format
+- [x] Browser dashboard
+- [x] Unit tests
+- [x] API contract
+- [x] README and setup instructions

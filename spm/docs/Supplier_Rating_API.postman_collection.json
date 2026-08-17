@@ -1,0 +1,120 @@
+{
+  "info": {
+    "name": "Supplier Performance Rating System API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/health"
+      }
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\",\"password\":\"admin123\",\"role\":\"ADMIN\"}"
+        },
+        "url": "{{baseUrl}}/api/auth/register"
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"username\":\"admin\",\"password\":\"admin123\"}"
+        },
+        "url": "{{baseUrl}}/api/auth/login"
+      }
+    },
+    {
+      "name": "Create Supplier",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"supplierCode\":\"SUP001\",\"name\":\"ABC Components\",\"email\":\"abc@example.com\",\"phone\":\"9876543210\",\"address\":\"Chennai\"}"
+        },
+        "url": "{{baseUrl}}/api/suppliers"
+      }
+    },
+    {
+      "name": "List Suppliers",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/suppliers"
+      }
+    },
+    {
+      "name": "Create Product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"productCode\":\"P001\",\"name\":\"Steel Bolt\",\"category\":\"Hardware\",\"unitPrice\":12.50}"
+        },
+        "url": "{{baseUrl}}/api/products"
+      }
+    },
+    {
+      "name": "Create Rating",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"supplier\":{\"id\":1},\"qualityScore\":90,\"deliveryScore\":85,\"costScore\":80,\"quantityAccuracyScore\":95,\"communicationScore\":90,\"complianceScore\":100}"
+        },
+        "url": "{{baseUrl}}/api/ratings"
+      }
+    },
+    {
+      "name": "Ranking",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/ratings/ranking"
+      }
+    }
+  ]
+}

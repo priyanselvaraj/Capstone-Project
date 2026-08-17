@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SPRS - Reports</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="app"><aside class="sidebar"><div class="side-brand">SPRS</div><nav><a href="dashboard.html">📊 Dashboard</a><a href="suppliers.html">🏢 Suppliers</a><a href="evaluation.html">⭐ Evaluation</a><a class="active" href="reports.html">📈 Reports</a></nav><button class="logout" onclick="logout()">↪ Logout</button></aside>
+<main class="main"><header><div><h2>Performance Reports</h2><p>Supplier performance analysis</p></div><button class="btn" onclick="window.print()">Print Report</button></header>
+<section class="panel"><h3>Supplier Performance</h3><div id="reportBars" class="bars"></div></section>
+<section class="panel"><h3>Evaluation Summary</h3><table><thead><tr><th>Supplier</th><th>Score</th><th>Grade</th><th>Recommendation</th></tr></thead><tbody id="reportTable"></tbody></table></section>
+</main></div><script src="script.js"></script></body></html>

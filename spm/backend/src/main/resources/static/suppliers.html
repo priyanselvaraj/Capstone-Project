@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SPRS - Suppliers</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="app"><aside class="sidebar"><div class="side-brand">SPRS</div><nav><a href="dashboard.html">📊 Dashboard</a><a class="active" href="suppliers.html">🏢 Suppliers</a><a href="evaluation.html">⭐ Evaluation</a><a href="reports.html">📈 Reports</a></nav><button class="logout" onclick="logout()">↪ Logout</button></aside>
+<main class="main"><header><div><h2>Suppliers</h2><p>Manage supplier information</p></div><button class="btn primary" onclick="openSupplierForm()">+ Add Supplier</button></header>
+<div class="toolbar"><input id="supplierSearch" placeholder="Search suppliers..." oninput="renderSuppliers()"></div>
+<section class="panel"><table><thead><tr><th>ID</th><th>Supplier</th><th>Contact</th><th>Category</th><th>Status</th><th>Score</th><th>Actions</th></tr></thead><tbody id="supplierTable"></tbody></table></section>
+<div id="supplierModal" class="modal hidden"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><h3 id="modalTitle">Add Supplier</h3>
+<form id="supplierForm"><input type="hidden" id="supplierId"><label>Supplier Name</label><input id="supplierName" required><label>Contact Email</label><input id="supplierEmail" type="email" required><label>Category</label><input id="supplierCategory" required><label>Status</label><select id="supplierStatus"><option>Active</option><option>Inactive</option></select><button class="btn primary">Save Supplier</button></form></div></div>
+</main></div><script src="script.js"></script></body></html>
