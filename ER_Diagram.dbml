@@ -1,0 +1,72 @@
+Table users {
+  id bigint [pk, increment]
+  username varchar [not null, unique]
+  password varchar [not null]
+  role varchar [not null]
+}
+
+Table suppliers {
+  id bigint [pk, increment]
+  supplier_code varchar [not null, unique]
+  name varchar [not null]
+  email varchar
+  phone varchar
+  address varchar
+  active boolean
+}
+
+Table products {
+  id bigint [pk, increment]
+  product_code varchar [not null, unique]
+  name varchar [not null]
+  category varchar
+  unit_price decimal
+}
+
+Table purchase_orders {
+  id bigint [pk, increment]
+  order_number varchar [not null, unique]
+  supplier_id bigint [not null, ref: > suppliers.id]
+  order_date date
+  total_amount decimal
+  status varchar
+}
+
+Table order_items {
+  id bigint [pk, increment]
+  order_id bigint [not null, ref: > purchase_orders.id]
+  product_id bigint [not null, ref: > products.id]
+  quantity int
+  unit_price decimal
+}
+
+Table deliveries {
+  id bigint [pk, increment]
+  order_id bigint [not null, ref: > purchase_orders.id]
+  expected_date date
+  actual_date date
+  quantity_received int
+  status varchar
+}
+
+Table supplier_ratings {
+  id bigint [pk, increment]
+  supplier_id bigint [not null, ref: > suppliers.id]
+  quality_score decimal
+  delivery_score decimal
+  cost_score decimal
+  quantity_accuracy_score decimal
+  communication_score decimal
+  compliance_score decimal
+  overall_score decimal
+  rating_category varchar
+  rating_date date
+}
+
+Table feedback {
+  id bigint [pk, increment]
+  supplier_id bigint [not null, ref: > suppliers.id]
+  user_id bigint [not null, ref: > users.id]
+  comments varchar
+  created_at timestamp
+}
